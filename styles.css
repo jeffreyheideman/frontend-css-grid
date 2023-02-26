@@ -1,1 +1,54 @@
 /*Maak hier jouw CSS!*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: beige;
+    color: beige;
+}
+
+.grid-container {
+    margin: 16px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 50px auto 50px;
+    grid-gap: 16px;
+    grid-template-areas:
+       "a c c"
+       "b e d"
+       "f f f";
+}
+
+.grid-item {
+    display: flex;
+    background-color: red;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.item-a {
+    grid-area: a;
+}
+
+.item-b {
+    grid-area: b;
+}
+
+.item-c {
+    grid-area: c;
+}
+
+.item-d {
+    grid-area: d;
+}
+
+.item-e {
+    grid-area: e;
+}
+
+.item-f {
+    grid-area: f;
+}
