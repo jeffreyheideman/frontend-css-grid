@@ -8,24 +8,30 @@
 body {
     background-color: beige;
     color: beige;
+    height: 100vh;
 }
 
 .grid-container {
     margin: 16px;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 50px auto 50px;
-    grid-gap: 16px;
+    gap: 16px;
+    grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
     grid-template-areas:
-       "a c c"
-       "b e d"
-       "f f f";
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "."
+    "f";
+
 }
 
 .grid-item {
     display: flex;
     background-color: red;
     justify-content: center;
+    align-items: center;
     border: 1px solid black;
 }
 
@@ -51,4 +57,54 @@ body {
 
 .item-f {
     grid-area: f;
+}
+
+
+@media screen and (min-width: 992px) {
+    .grid-container {
+        margin: 16px;
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows:  50px 190px 100px 140px 50px;
+        grid-template-areas:
+    "a c c"
+    "b c c"
+    "b e d"
+    "b e ."
+    "f f f";
+
+    }
+
+    .grid-item {
+        display: flex;
+        background-color: red;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+    }
+
+    .item-a {
+        grid-area: a;
+    }
+
+    .item-b {
+        grid-area: b;
+    }
+
+    .item-c {
+        grid-area: c;
+    }
+
+    .item-d {
+        grid-area: d;
+    }
+
+    .item-e {
+        grid-area: e;
+    }
+
+    .item-f {
+        grid-area: f;
+    }
 }
